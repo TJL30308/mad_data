@@ -5,6 +5,7 @@ Extract:
 		- Alcohol Consumption per Capita by Country
 			https://en.wikipedia.org/wiki/List_of_countries_by_alcohol_consumption_per_capita
 			https://data.worldbank.org/indicator/SH.ALC.PCAP.LI
+			http://apps.who.int/gho/data/node.main.A1036
 
 		- Wine Production by Country
 			https://en.wikipedia.org/wiki/List_of_wine-producing_regions
@@ -12,11 +13,18 @@ Extract:
 		- Traffic Related Deaths by Country
 			https://en.wikipedia.org/wiki/List_of_countries_by_traffic-related_death_rate
 
+		- Wine reviews
+			https://www.kaggle.com/zynicide/wine-reviews#winemag-data-130k-v2.csv
+
 	notes: country is common key between tables	
 				
 Transform:
 
-	TBD
+	Remove commas from number formatting
+	Consistent country names
+	Ignore flag icons from wikipedia scrape
+	
 
 Load:
 	Relational Database
+	Country as key
