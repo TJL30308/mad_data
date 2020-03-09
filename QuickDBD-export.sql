@@ -2,7 +2,7 @@
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 
-CREATE TABLE Country (
+CREATE TABLE "Country" (
     "country_id" VARCHAR(255)   NOT NULL,
     "country_name" VARCHAR(255)   NOT NULL,
     CONSTRAINT "pk_Country" PRIMARY KEY (
@@ -10,7 +10,7 @@ CREATE TABLE Country (
      )
 );
 
-CREATE TABLE Alcohol_Consumption (
+CREATE TABLE "Alcohol_Consumption" (
     "country_id" VARCHAR(255)   NOT NULL,
     "year" Int   NOT NULL,
     "both_sexes" Float   NOT NULL,
@@ -21,44 +21,38 @@ CREATE TABLE Alcohol_Consumption (
      )
 );
 
-CREATE TABLE Alcohol_Production (
+CREATE TABLE "Alcohol_Production" (
     "country_id" VARCHAR(255)   NOT NULL,
     "rank" Int   NOT NULL,
-    "production(tonnes)" Float   NOT NULL,
-    CONSTRAINT "pk_Alcohol_Production" PRIMARY KEY (
-        "country_id"
-     )
+    "production_tonnes" INT   NOT NULL
 );
 
-CREATE TABLE Reviews (
+CREATE TABLE "Reviews" (
     "review_id" VARCHAR(255)   NOT NULL,
-    "country_name" VARCHAR(255)   NOT NULL,
-    "descrption" VARCHAR(255)   NOT NULL,
-    "designation" Float   NOT NULL,
-    "points" Float   NOT NULL,
-    "price" Money   NOT NULL,
-    "province" VARCHAR(255)   NOT NULL,
-    "region_1" VARCHAR(255)   NOT NULL,
-    "region_2" VARCHAR(255)   NOT NULL,
-    "taster_name" VARCHAR(255)   NOT NULL,
-    "taster_twitter_handle" VARCHAR(255)   NOT NULL,
-    "title" VARCHAR(255)   NOT NULL,
-    "variety" VARCHAR(255)   NOT NULL,
-    "winery" VARCHAR(255)   NOT NULL,
-    "country_id" VARCHAR(255)   NOT NULL,
+    "country_name" VARCHAR(255),
+    "description" VARCHAR,
+    "designation" VARCHAR(255),
+    "points" Int,
+    "price" Int,
+    "province" VARCHAR(255),
+    "region_1" VARCHAR(255),
+    "region_2" VARCHAR(255),
+    "taster_name" VARCHAR(255),
+    "taster_twitter_handle" VARCHAR(255),
+    "title" VARCHAR(255),
+    "variety" VARCHAR(255),
+    "winery" VARCHAR(255),
+    "country_id" VARCHAR(255),
     CONSTRAINT "pk_Reviews" PRIMARY KEY (
         "review_id"
      )
 );
 
-CREATE TABLE Traffic_Related_Deaths (
+CREATE TABLE "Traffic_Related_Deaths" (
     "country_id" VARCHAR(255)   NOT NULL,
-    "fatalaties_100k_people_per_year" Float   NOT NULL,
-    "fatalaties_100k_mv_per_year" Float   NOT NULL,
-    "year" Int   NOT NULL,
-    CONSTRAINT "pk_Traffic_Related_Deaths" PRIMARY KEY (
-        "country_id"
-     )
+    "fatalaties_100K_people_per_year" Float,
+    "fatalities_100K_mv_per_year" Float,
+    "year" Int   NOT NULL
 );
 
 ALTER TABLE "Alcohol_Consumption" ADD CONSTRAINT "fk_Alcohol_Consumption_country_id" FOREIGN KEY("country_id")
