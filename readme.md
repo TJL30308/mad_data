@@ -24,10 +24,13 @@ https://en.wikipedia.org/wiki/List_of_countries_by_traffic-related_death_rate
 https://www.kaggle.com/zynicide/wine-reviews#winemag-data-130k-v2.csv
 
 ## Extraction
-???
+- Alcohol Consumption data was extracted from World Health Organization webpage. 
+- WHO provided the rate of total per capita (15+) consumption (in litres of pure alcohol) with 95%CI
 
 ## Transform
-???
+- Alcohol consumption data was cleaned to remove 95%CI values from the rates such that the rates were isolated and accesible
+- Alcohol consumption data column headings were adjust for readability
+- Country ID codes were added to the WHO data table using PyCountry python module
 
 ## Load
 ???
